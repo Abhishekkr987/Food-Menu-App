@@ -1,0 +1,51 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" herf="{% static "food/style.css" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+    <nav class=" navbar navbar-dark bg-dark">
+        <a href="{% url 'food:index' %}" class="navbar-brand">FoodApp</a>
+        <div class="navbar">
+            <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+    </nav>
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% block body %}
+    <center>
+    <h1>You have been successfully logged out !!!</h1><br>
+    <h2>Please login and enjoy our services !!!<br>
+    Thankyou !!!
+    </h2>
+    </center>
+    {% endblock %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
